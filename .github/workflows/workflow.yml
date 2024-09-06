@@ -1,0 +1,19 @@
+name: Simple Hello World Workflow
+
+# This workflow runs every time you push code to the main branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest  # Use a Linux-based virtual machine
+    steps:
+      # Check out your repository code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Print "Hello World"
+      - name: Say Hello
+        run: echo "Hello World"
